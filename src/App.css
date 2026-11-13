@@ -1,0 +1,349 @@
+.site {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top bar ─────────────────────────────────────────── */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(248, 244, 233, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: linear-gradient(160deg, #256b57, var(--green-deep));
+  color: var(--cream);
+  font: 700 18px var(--serif);
+  display: grid;
+  place-items: center;
+}
+
+.brand-text {
+  font: 700 18px var(--serif);
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.brand-sub {
+  display: block;
+  font: 600 9.5px var(--sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tabs {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+}
+
+.tab {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--green);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.tab:hover {
+  background: rgba(30, 91, 74, 0.08);
+}
+
+.tab.active {
+  background: var(--green);
+  color: var(--cream);
+  box-shadow: 0 4px 12px rgba(20, 61, 49, 0.25);
+}
+
+.print-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--green);
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.print-btn:hover {
+  background: rgba(30, 91, 74, 0.08);
+}
+
+/* ── Page & CV header ────────────────────────────────── */
+.page {
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 40px 20px 64px;
+  flex: 1;
+}
+
+.cv {
+  animation: rise 0.45s ease;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.cv-header {
+  display: grid;
+  grid-template-columns: 168px 1fr;
+  gap: 30px;
+  align-items: start;
+  margin-bottom: 36px;
+}
+
+.avatar {
+  width: 168px;
+  height: 210px;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(22, 36, 29, 0.18);
+}
+
+.avatar.photo {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.avatar.initials {
+  background: linear-gradient(160deg, #256b57, var(--green-deep));
+  color: #f3ead6;
+  display: grid;
+  place-items: center;
+  font: 700 46px var(--serif);
+  letter-spacing: 2px;
+}
+
+.cv-header h1 {
+  font: 700 clamp(30px, 5vw, 42px) / 1.15 var(--serif);
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.role {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--green);
+  margin-bottom: 14px;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #5a655d;
+}
+
+.contacts li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.contacts svg {
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.contacts a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contacts a:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.summary {
+  font-size: 13.5px;
+  line-height: 1.75;
+  max-width: 780px;
+}
+
+/* ── Section cards ───────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px 26px 26px;
+}
+
+.card-title {
+  font: 700 20px var(--serif);
+  color: #1c352a;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 16px;
+}
+
+.entry + .entry {
+  margin-top: 18px;
+}
+
+.entry-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #233029;
+  margin-bottom: 2px;
+}
+
+.entry-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.entry .bullets {
+  margin-top: 8px;
+}
+
+.bullets {
+  display: grid;
+  gap: 8px;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.bullets li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.52em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+/* ── Footer ──────────────────────────────────────────── */
+.footer {
+  padding: 22px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-header {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 176px;
+  }
+
+  .tabs {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .tab {
+    flex: 1;
+    text-align: center;
+  }
+
+  .print-btn {
+    margin-left: auto;
+  }
+}
+
+/* ── Print / PDF ─────────────────────────────────────── */
+@page {
+  margin: 12mm;
+}
+
+@media print {
+  .topbar,
+  .footer {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .page {
+    max-width: none;
+    padding: 0;
+  }
+
+  .cv {
+    animation: none;
+  }
+
+  .card {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .avatar {
+    box-shadow: none;
+  }
+}
