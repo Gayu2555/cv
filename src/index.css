@@ -8,6 +8,10 @@
   --green: #1e5b4a;
   --green-deep: #143d31;
   --cream: #f7f3e8;
+  --hover: rgba(30, 91, 74, 0.08);
+  --solid: #1e5b4a;
+  --bar-bg: rgba(248, 244, 233, 0.92);
+  --shadow-c: rgba(22, 36, 29, 0.18);
   --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
 
@@ -16,6 +20,23 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme='dark'] {
+  --bg: #101613;
+  --card: #161f1a;
+  --line: #2a362e;
+  --ink: #ede8db;
+  --body-c: #b7c2b9;
+  --muted: #7f8c82;
+  --green: #66b49c;
+  --green-deep: #17493b;
+  --cream: #f2eee2;
+  --hover: rgba(102, 180, 156, 0.12);
+  --solid: #2a6b57;
+  --bar-bg: rgba(16, 22, 19, 0.92);
+  --shadow-c: rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
 }
 
 * {
@@ -27,6 +48,7 @@ body {
   background: var(--bg);
   color: var(--body-c);
   font: 400 14px/1.65 var(--sans);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 h1,
